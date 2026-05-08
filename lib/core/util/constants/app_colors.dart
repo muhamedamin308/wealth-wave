@@ -10,6 +10,11 @@ class AppColors {
 
   // Gradient used on splash screen and app bar
   static const List<Color> primaryGradient = [vibrantTeal, midTeal, deepDark];
+  static const List<Color> secondaryGradient = [
+    deepBackground,
+    deepDark,
+    surfaceDark,
+  ];
 
   // ========== Background & Surface ==========
   static const Color deepBackground = Color.fromARGB(255, 6, 17, 19); // #0A1C1F

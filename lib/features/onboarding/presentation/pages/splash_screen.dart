@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:wealth_wave/config/routes/named_routes.dart';
+import 'package:wealth_wave/core/common/extenstions/sizes.dart';
 import 'package:wealth_wave/core/common/widget/custom_circular_progress_indicator.dart';
 import 'package:wealth_wave/core/util/constants/app_colors.dart';
 import 'package:wealth_wave/di/locator.dart';
@@ -19,6 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => Sizes.init(context));
     _splashController.isUserLoggedIn();
     _splashController.addListener(() {
       if (_splashController.state is SplashSuccessState) {
