@@ -12,6 +12,7 @@ class AppColors {
   static const List<Color> primaryGradient = [vibrantTeal, midTeal, deepDark];
 
   // ========== Background & Surface ==========
+  static const Color deepBackground = Color.fromARGB(255, 6, 17, 19); // #0A1C1F
   static const Color scaffoldBackground = deepDark; // #0A1C1F
   static const Color cardBackground = Color(0xFF17252A); // from original design
   static const Color surfaceDark = Color(

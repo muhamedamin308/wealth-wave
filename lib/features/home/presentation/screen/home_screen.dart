@@ -8,8 +8,8 @@ import 'package:wealth_wave/core/util/constants/app_text_style.dart';
 import 'package:wealth_wave/di/locator.dart';
 import 'package:wealth_wave/features/auth/presentation/controller/authentication_controller.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
