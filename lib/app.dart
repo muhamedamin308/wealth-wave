@@ -5,10 +5,14 @@ import 'package:wealth_wave/config/routes/named_routes.dart';
 import 'package:wealth_wave/config/theme/default_theme.dart';
 import 'package:wealth_wave/features/auth/presentation/pages/create_account_screen.dart';
 import 'package:wealth_wave/features/auth/presentation/pages/login_screen.dart';
-import 'package:wealth_wave/features/home/presentation/screen/home_screen.dart';
+import 'package:wealth_wave/features/home/presentation/screen/home_page.dart';
+import 'package:wealth_wave/features/home/presentation/widgets/home_page_view_state.dart';
 import 'package:wealth_wave/features/onboarding/presentation/helpers/transitions/page_transition.dart';
 import 'package:wealth_wave/features/onboarding/presentation/pages/onboarding_screen.dart';
 import 'package:wealth_wave/features/onboarding/presentation/pages/splash_screen.dart';
+import 'package:wealth_wave/features/wallet/wallet_page.dart';
+import 'package:wealth_wave/features/profile/profile_page.dart';
+import 'package:wealth_wave/features/statistics/stats_page.dart';
 
 class App extends StatelessWidget {
   App({super.key});
@@ -87,7 +91,34 @@ class App extends StatelessWidget {
         path: '/home', // Fixed: absolute path
         pageBuilder: (context, state) => _buildPage(
           key: state.pageKey,
-          child: HomeScreen(),
+          child: HomePageViewState(),
+          transitions: PageTransitions.slideFromBottom,
+        ),
+      ),
+      GoRoute(
+        name: NamedRoutes.wallet,
+        path: '/wallet',
+        pageBuilder: (context, state) => _buildPage(
+          key: state.pageKey,
+          child: const WalletPage(),
+          transitions: PageTransitions.slideFromBottom,
+        ),
+      ),
+      GoRoute(
+        name: NamedRoutes.profile,
+        path: '/profile',
+        pageBuilder: (context, state) => _buildPage(
+          key: state.pageKey,
+          child: const ProfilePage(),
+          transitions: PageTransitions.slideFromBottom,
+        ),
+      ),
+      GoRoute(
+        name: NamedRoutes.stats,
+        path: '/stats',
+        pageBuilder: (context, state) => _buildPage(
+          key: state.pageKey,
+          child: const StatsPage(),
           transitions: PageTransitions.slideFromBottom,
         ),
       ),
