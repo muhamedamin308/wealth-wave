@@ -253,7 +253,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.only(left: 8, right: 8, top: 16),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -276,7 +276,9 @@ class _HomePageState extends State<HomePage> {
                     animation: homeController,
                     builder: (context, child) {
                       if (homeController.state is HomeLoadingState) {
-                        return CustomCircularProgressIndicator();
+                        return const Center(
+                          child: CustomCircularProgressIndicator(),
+                        );
                       }
                       if (homeController.state is HomeErrorState) {
                         // Icon for a wallet and text
@@ -371,7 +373,7 @@ class _HomePageState extends State<HomePage> {
                               child: Icon(
                                 Icons.monetization_on_outlined,
                                 size: 20,
-                                color: color,
+                                color: color.withValues(alpha: 0.7),
                               ),
                             ),
                             title: Text(
@@ -387,7 +389,7 @@ class _HomePageState extends State<HomePage> {
                             trailing: Text(
                               amount,
                               style: AppTextStyle.bodyMedium.copyWith(
-                                color: color,
+                                color: color.withValues(alpha: 1),
                               ),
                             ),
                           );

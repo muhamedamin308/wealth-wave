@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:wealth_wave/core/common/widget/custom_bottom_app_bar.dart';
 import 'package:wealth_wave/core/util/constants/app_colors.dart';
 import 'package:wealth_wave/features/home/presentation/pages/home_screen.dart';
-import 'package:wealth_wave/features/profile/profile_page.dart';
+import 'package:wealth_wave/features/profile/presentaion/pages/profile_page.dart';
 import 'package:wealth_wave/features/statistics/stats_page.dart';
 import 'package:wealth_wave/features/wallet/wallet_page.dart';
 

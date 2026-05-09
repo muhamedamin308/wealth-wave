@@ -6,6 +6,7 @@ import 'package:wealth_wave/features/home/data/repository/transaction_repository
 import 'package:wealth_wave/features/home/domain/repository/transaction_repository.dart';
 import 'package:wealth_wave/features/home/presentation/controller/home_controller.dart';
 import 'package:wealth_wave/features/onboarding/presentation/controller/splash_controller.dart';
+import 'package:wealth_wave/features/profile/presentaion/controller/profile_controller.dart';
 import 'package:wealth_wave/services/auth_service.dart';
 
 final locator = GetIt.instance;
@@ -30,5 +31,9 @@ void setupLocator() {
 
   locator.registerLazySingleton<HomeController>(
     () => HomeController(locator.get<TransactionRepository>()),
+  );
+
+  locator.registerLazySingleton<ProfileController>(
+    () => ProfileController(locator.get<AuthService>(), const SecureStorage()),
   );
 }

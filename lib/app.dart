@@ -10,7 +10,7 @@ import 'package:wealth_wave/features/onboarding/presentation/helpers/transitions
 import 'package:wealth_wave/features/onboarding/presentation/pages/onboarding_screen.dart';
 import 'package:wealth_wave/features/onboarding/presentation/pages/splash_screen.dart';
 import 'package:wealth_wave/features/wallet/wallet_page.dart';
-import 'package:wealth_wave/features/profile/profile_page.dart';
+import 'package:wealth_wave/features/profile/presentaion/pages/profile_page.dart';
 import 'package:wealth_wave/features/statistics/stats_page.dart';
 
 class App extends StatelessWidget {
