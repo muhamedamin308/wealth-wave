@@ -13,21 +13,20 @@ class AuthenticationController extends ChangeNotifier {
 
   AuthenticationState get state => _state;
 
-  void changeState(AuthenticationState newState) {
+  void _changeState(AuthenticationState newState) {
     _state = newState;
     notifyListeners();
   }
 
   Future<bool> doLogout() async {
-    final secureStorage = SecureStorage();
-    changeState(AuthenticationLoadingState());
+    _changeState(AuthenticationLoadingState());
     try {
       await _authService.signOut();
-      await secureStorage.delete(key: SecureStorageKeys.currentUserId);
-      changeState(AuthenticationSuccessState());
+      await _secureStorage.delete(key: SecureStorageKeys.currentUserId);
+      _changeState(AuthenticationSuccessState());
       return true;
     } catch (e) {
-      changeState(AuthenticationErrorState(e.toString()));
+      _changeState(AuthenticationErrorState(e.toString()));
       return false;
     }
   }
@@ -37,7 +36,7 @@ class AuthenticationController extends ChangeNotifier {
     required String email,
     required String password,
   }) async {
-    changeState(AuthenticationLoadingState());
+    _changeState(AuthenticationLoadingState());
     try {
       final user = await _authService.signUp(
         name,
@@ -49,13 +48,13 @@ class AuthenticationController extends ChangeNotifier {
           key: SecureStorageKeys.currentUserId,
           value: user.toJson(),
         );
-        changeState(AuthenticationSuccessState());
+        _changeState(AuthenticationSuccessState());
         return true;
       } else {
         throw Exception('Failed to create account');
       }
     } catch (e) {
-      changeState(AuthenticationErrorState(e.toString()));
+      _changeState(AuthenticationErrorState(e.toString()));
       return false;
     }
   }
@@ -64,7 +63,7 @@ class AuthenticationController extends ChangeNotifier {
     required String email,
     required String password,
   }) async {
-    changeState(AuthenticationLoadingState());
+    _changeState(AuthenticationLoadingState());
     try {
       final user = await _authService.signIn(email: email, password: password);
       if (user != null) {
@@ -72,14 +71,14 @@ class AuthenticationController extends ChangeNotifier {
           key: SecureStorageKeys.currentUserId,
           value: user.toJson(),
         );
-        changeState(AuthenticationSuccessState());
+        _changeState(AuthenticationSuccessState());
         return true;
       } else {
-        changeState(AuthenticationErrorState('Failed to log in'));
+        _changeState(AuthenticationErrorState('Failed to log in'));
         return false;
       }
     } catch (e) {
-      changeState(AuthenticationErrorState(e.toString()));
+      _changeState(AuthenticationErrorState(e.toString()));
       return false;
     }
   }

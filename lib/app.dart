@@ -5,13 +5,12 @@ import 'package:wealth_wave/config/routes/named_routes.dart';
 import 'package:wealth_wave/config/theme/default_theme.dart';
 import 'package:wealth_wave/features/auth/presentation/pages/create_account_screen.dart';
 import 'package:wealth_wave/features/auth/presentation/pages/login_screen.dart';
-import 'package:wealth_wave/features/home/presentation/screen/home_page.dart';
 import 'package:wealth_wave/features/home/presentation/widgets/home_page_view_state.dart';
 import 'package:wealth_wave/features/onboarding/presentation/helpers/transitions/page_transition.dart';
 import 'package:wealth_wave/features/onboarding/presentation/pages/onboarding_screen.dart';
 import 'package:wealth_wave/features/onboarding/presentation/pages/splash_screen.dart';
 import 'package:wealth_wave/features/wallet/wallet_page.dart';
-import 'package:wealth_wave/features/profile/profile_page.dart';
+import 'package:wealth_wave/features/profile/presentaion/pages/profile_page.dart';
 import 'package:wealth_wave/features/statistics/stats_page.dart';
 
 class App extends StatelessWidget {

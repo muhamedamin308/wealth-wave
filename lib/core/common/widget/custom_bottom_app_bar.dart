@@ -55,7 +55,7 @@ class _CustomBottomAppBarState extends State<CustomBottomAppBar> {
     final selectedIndex = widget.pageController.selectedBottomAppBarItemIndex;
 
     return BottomAppBar(
-      color: AppColors.deepBackground,
+      color: AppColors.scaffoldBackground,
       shape: const CircularNotchedRectangle(),
       elevation: 8.0,
       notchMargin: 8.0,

@@ -30,7 +30,7 @@ class CustomMessageBottomSheet extends StatelessWidget {
   }) {
     return showModalBottomSheet<void>(
       context: context,
-      isDismissible: true,
+      isDismissible: false,
       enableDrag: true,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
